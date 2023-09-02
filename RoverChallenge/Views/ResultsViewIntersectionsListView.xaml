@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="RoverChallenge.Views.ResultsViewIntersectionsListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodels="clr-namespace:RoverChallenge.ViewModels"
+             xmlns:local="clr-namespace:RoverChallenge.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <viewmodels:BaseViewModel/>
+    </UserControl.DataContext>
+
+    <UserControl.Content>
+        <Grid >
+            <StackPanel Orientation="Vertical" >
+                <Border BorderBrush="White" BorderThickness="0,0,0,0.5">
+                    <TextBlock Text="Rover Intersections"
+                               FontSize="28"
+                               HorizontalAlignment="Center"
+                               Foreground="White"
+                               Margin="0,0,0,10"/>     
+                </Border>
+                
+
+                <ListView ItemsSource="{Binding Settings.Results,UpdateSourceTrigger=PropertyChanged}" 
+                          IsHitTestVisible="False"
+                          TextElement.Foreground="White"
+                          Margin="30,0,0,0"/>
+            </StackPanel>
+        </Grid>
+           
+    </UserControl.Content>
+</UserControl>

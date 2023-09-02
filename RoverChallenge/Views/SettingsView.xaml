@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="RoverChallenge.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:RoverChallenge.Views"
+             xmlns:viewmodels="clr-namespace:RoverChallenge.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <viewmodels:BaseViewModel/>
+    </UserControl.DataContext>
+    
+    <UserControl.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Configure the rover count and map size, then select next."
+                       Grid.Row="0"
+                       FontSize="28"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"/>
+
+            <!--#region Controls-->
+            <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center">
+
+                <!--Rover Count-->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+                    <TextBlock Text="Rover Count :"
+                           Foreground="White"
+                           FontSize="28"
+                           FontWeight="SemiBold"
+                           />
+                    <Slider Maximum="10"
+                        Minimum="2"
+                        TickFrequency="1"
+                        Width="200"
+                        Value="{Binding Settings.RoverCount,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                        VerticalAlignment="Center"
+                        Margin="60,0,0,0"/>
+
+                    <TextBlock Text="{Binding Settings.RoverCount,UpdateSourceTrigger=PropertyChanged}"
+                           Foreground="White"
+                           FontWeight="SemiBold"
+                           FontSize="28"
+                           Margin="60,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0">
+
+                    <TextBlock Text="Horizontal blocks:"
+                           Foreground="White"
+                           FontSize="28"
+                           FontWeight="SemiBold"
+                           />
+                    <Slider Maximum="20"
+                        Minimum="2"
+                        TickFrequency="1"
+                        Width="200"
+                        Value="{Binding Settings.MapWidth,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                        VerticalAlignment="Center"
+                        Margin="60,0,0,0"/>
+
+                    <TextBlock Text="{Binding Settings.MapWidth,UpdateSourceTrigger=PropertyChanged}"
+                           Foreground="White"
+                           FontWeight="SemiBold"
+                           FontSize="28"
+                           Margin="60,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0">
+
+                    <TextBlock Text="Vertical blocks :"
+                           Foreground="White"
+                           FontSize="28"
+                           FontWeight="SemiBold"
+                           />
+                    <Slider Maximum="20"
+                        Minimum="2"
+                        TickFrequency="1"
+                        Width="200"
+                        Value="{Binding Settings.MapHeight,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                        VerticalAlignment="Center"
+                        Margin="60,0,0,0"/>
+
+                    <TextBlock Text="{Binding Settings.MapHeight,UpdateSourceTrigger=PropertyChanged}"
+                           Foreground="White"
+                           FontWeight="SemiBold"
+                           FontSize="28"
+                           Margin="60,0,0,0"/>
+                </StackPanel>
+
+            </StackPanel>
+            <!--#endregion-->
+            
+            <!--#region Button-->
+            <Button Width="200"
+                    Height="60"
+                    Grid.Row="2"
+                    Content="Next"
+                    Foreground="White"
+                    BorderBrush="#2a466d"
+                    BorderThickness="1"
+                    Background="#070707"
+                    Command="{Binding Settings.NextCommand}"
+                    />
+            <!--#endregion-->
+
+        </Grid>
+
+        
+
+    </UserControl.Content>
+    
+</UserControl>

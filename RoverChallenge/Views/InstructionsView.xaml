@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="RoverChallenge.Views.InstructionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RoverChallenge.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer CanContentScroll="True"
+                              VerticalScrollBarVisibility="Auto">
+
+            <StackPanel Orientation="Vertical">
+
+
+                <TextBlock Text="Instructions:"
+                                FontSize="28"
+                                FontWeight="SemiBold"
+                                Foreground="White"
+                                Margin="30,30,0,0"/>
+
+                <TextBlock Text="Input Example: "
+                               TextWrapping="Wrap"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+                <TextBlock Text="(4,4) - The upper-right coordinates of the plateau"
+                               TextWrapping="Wrap"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+                <TextBlock Text="(0,2) - The first rover's initial position"
+                               TextWrapping="Wrap"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+                <TextBlock Text="NEESSS - Rover 1 travelling instructions."
+                               TextWrapping="Wrap"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+                <TextBlock Text="(4,1) - The second rover's initial position"
+                               TextWrapping="Wrap"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+                <TextBlock Text="WWWNNNEEE  - Rover 1 travelling instructions"
+                               TextWrapping="Wrap"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+                <TextBlock Text="Output Example: "
+                               TextWrapping="Wrap"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+                <TextBlock Text="Intersection point 1: 2 1"
+                               TextWrapping="Wrap"
+                               FontSize="20"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+                <TextBlock Text="Intersection point 2: 1 3"
+                               TextWrapping="Wrap"
+                               FontSize="20"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="30,30,0,0"
+                               />
+
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+</UserControl>
